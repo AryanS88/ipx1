@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="changingDiv"></div>
+
+    <script>
+        const changingDiv = document.getElementById("changingDiv")
+        const colors=["red","green","blue","pink","black","yellow"]
+        let currIndex=0
+
+        function changeBg(){
+            changingDiv.style.backgroundColor = colors[currIndex]
+            currIndex=(currIndex+1) % colors.length
+        }
+        changeBg()
+        setInterval(changeBg,3000)
+    </script>
+
+    <style>
+        #changingDiv{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</body>
+</html>

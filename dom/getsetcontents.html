@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="main">
+        <h1 id="title">Hello world, this is an h1 tag</h1> 
+        <p id="para">This is the paragraph text</p>
+    </div>
+
+    <button type="button" onclick="getContents()">Get Contents</button>
+    <button type="button" onclick="setContents()">Set Contents</button>
+
+    <script>
+        function getContents(){
+            var displayElement = document.getElementById("main").innerHTML
+            alert(displayElement)
+        }
+
+        function setContents(){
+            var newDisplay = document.getElementById("main")
+            newDisplay.innerHTML="<p>This is the <em>new</em> text.</p>"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="main">
+        <p id="oldContent">This is the old content.</p>
+    </div>
+
+    <button type="button" onclick="insertAndReplaceElement()">Insert and Replace Element</button>
+
+    <script>
+        function insertAndReplaceElement(){
+
+            var mainDiv = document.getElementById("main")
+            mainDiv.insertAdjacentHTML("beforebegin",'<p>This is paragraph one.</p>')
+            mainDiv.insertAdjacentHTML("afterbegin",'<p>This is paragraph two.</p>')
+            mainDiv.insertAdjacentHTML("beforeend", '<p>This is paragraph three.</p>')
+            mainDiv.insertAdjacentHTML("afterend", '<p>This is paragraph four.</p>')
+
+            var ParentEle = document.getElementById("main")
+            var newPara = document.createElement("p")
+            var newText = document.createTextNode("This is new content")
+            newPara.appendChild(newText)
+
+            var oldContent=document.getElementById("oldContent")
+            ParentEle.replaceChild(newPara, oldContent)
+        }
+    </script>
+</body>
+</html>

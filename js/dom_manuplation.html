@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Manipulation Examples</title>
+</head>
+
+<body>
+    <p id="text-example">This is some text.</p>
+    <div id="style-example" style="width: 100px; height: 100px; background-color: red;"></div>
+    <ul id="list-example">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <input type="text" id="input-field">
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="changeStyle()">Change Style</button>
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="removeItem()">Remove Item</button>
+    <button onclick="getValue()">Get Input Value</button>
+
+    <script>
+        function changeText() {
+            const textElement = document.getElementById("text-example");
+            textElement.textContent = "Text has been changed!";
+        }
+
+        function changeStyle() {
+            const styleElement = document.getElementById("style-example");
+            styleElement.style.backgroundColor = "blue";
+        }
+
+        function addItem() {
+            const listElement = document.getElementById("list-example");
+            const newItem = document.createElement("li");
+            newItem.textContent = "New Item";
+            listElement.appendChild(newItem);
+        }
+
+        function removeItem() {
+            const listElement = document.getElementById("list-example");
+            const items = listElement.getElementsByTagName("li");
+            if (items.length > 0) {
+                listElement.removeChild(items[items.length - 1]);
+            }
+        }
+
+        function getValue() {
+            const inputField = document.getElementById("input-field");
+            alert("Input Value: " + inputField.value);
+        }
+    </script>
+</body>
+
+</html>

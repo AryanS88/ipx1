@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="main">
+        <p id="para">This is the text.</p>
+    </div>
+
+    <button type="button" id="changingButton" onclick="changeFont">Change Font</button>
+
+    <style>
+        #para{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: medium;
+        }
+    </style>
+
+    <script>
+        const fontList = ["Arial, Helvetica, sans-serif", "Verdana, Geneva, Tahoma, sans-serif", "'Times New Roman', Times, serif", "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif","Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"]
+        currIndex=0
+        const para = document.getElementById("para")
+        const changingButton = document.getElementById("changingButton")
+
+        changingButton.addEventListener("click",() => {
+            currIndex=(currIndex+1) % fontList.length
+            para.style.fontFamily=fontList[currIndex]
+
+        })
+    </script>
+</body>
+</html>

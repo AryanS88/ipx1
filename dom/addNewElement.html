@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button type="button" onclick="addNewElement()">Add New Element</button>
+
+<script>
+    function addNewElement(){
+
+        var newDiv = document.createElement("div");
+        var newText = document.createTextNode("Hi, Ayesha. I was newly added!");
+
+        newDiv.appendChild(newText);
+        document.body.appendChild(newDiv);
+
+    }
+</script>
+</body>
+</html>
